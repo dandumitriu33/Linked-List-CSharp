@@ -57,7 +57,14 @@ namespace Codecool.LinkedListDojo
         /// <returns></returns>
         public Node<T> GetItem(int index)
         {
-            throw new NotImplementedException();
+            int counter = 0;
+            var currentNode = _head;
+            do
+            {
+                currentNode = currentNode.Next;
+                counter++;
+            } while (counter < index);
+            return currentNode;
         }
 
         /// <summary>

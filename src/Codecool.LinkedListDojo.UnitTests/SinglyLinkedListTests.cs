@@ -35,7 +35,6 @@ namespace Codecool.LinkedListDojo.UnitTests
             //Act
             _list.Insert(1, "three");
             //Assert
-            Console.WriteLine("wdwdwdw");
             Assert.Equal("one two three three four five", _list.ToString());
         }
 
