@@ -37,7 +37,17 @@ namespace Codecool.LinkedListDojo
         /// <param name="data"></param>
         public void Insert(int index, T data)
         {
-            throw new NotImplementedException();
+            int counter = 0;
+            var currentNode = _head;
+            do
+            {
+                currentNode = currentNode.Next;
+                counter++;
+            } while (counter < index);
+            var tempNext = currentNode.Next;
+            currentNode.Next = new Node<T>(data);
+            currentNode = currentNode.Next;
+            currentNode.Next = tempNext;
         }
 
         /// <summary>
