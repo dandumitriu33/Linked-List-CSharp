@@ -5,6 +5,7 @@ namespace Codecool.LinkedListDojo
     public class SinglyLinkedList<T>
     {
         private Node<T> _head;
+        public int Length { get; set; }
 
         /// <summary>
         /// Add a new element to the LinkedList. The new element is appended to the current last item.
@@ -12,7 +13,6 @@ namespace Codecool.LinkedListDojo
         /// <param name="data"></param>
         public void Append(T data)
         {
-            
             if (_head == null)
             {
                 _head = new Node<T>(data);
@@ -26,6 +26,7 @@ namespace Codecool.LinkedListDojo
                 }
                 currentNode.Next = new Node<T>(data);
             }
+            Length++;
            
         }
 
@@ -48,6 +49,7 @@ namespace Codecool.LinkedListDojo
             currentNode.Next = new Node<T>(data);
             currentNode = currentNode.Next;
             currentNode.Next = tempNext;
+            Length++;
         }
 
         /// <summary>
@@ -73,7 +75,7 @@ namespace Codecool.LinkedListDojo
         /// <returns>Amount of elements</returns>
         public int GetLength()
         {
-            throw new NotImplementedException();
+            return Length;
         }
 
         /// <summary>
@@ -102,6 +104,7 @@ namespace Codecool.LinkedListDojo
                 }
             }
             currentNode.Next = currentNode.Next.Next;
+            Length--;
         }
 
         /// <summary>
