@@ -12,7 +12,21 @@ namespace Codecool.LinkedListDojo
         /// <param name="data"></param>
         public void Append(T data)
         {
-            throw new NotImplementedException();
+            
+            if (_head == null)
+            {
+                _head = new Node<T>(data);
+            }
+            else
+            {
+                var currentNode = _head;
+                while (currentNode.Next != null)
+                {
+                    currentNode = currentNode.Next;
+                }
+                currentNode.Next = new Node<T>(data);
+            }
+           
         }
 
         /// <summary>
